@@ -1,7 +1,15 @@
-import "./App.css";
+import TodoCount from "./components/TodoCount";
+import TodoForm from "./components/TodoForm";
+import TodoList from "./components/TodoList";
 
-function App() {
-  return <></>;
-}
+const App: React.FC = () => {
+  return (
+    <>
+      <TodoList />
+      <TodoCount />
+      <TodoForm />
+    </>
+  );
+};
 
 export default App;
