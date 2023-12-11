@@ -1,4 +1,5 @@
 import { easyStateManager } from "rxdux-state-manager";
+import { TodoItem } from "../types/Todo";
 
 export const {
   useStateManager: useGlobalState,
@@ -40,7 +41,7 @@ export const {
 });
 
 export const dummyActions = {
-  addTodo: (todo: { id: number; label: string; checked: boolean; }) => {
+  addTodo: (todo: TodoItem) => {
     updateGlobalState((draft) => {
       draft.todos.push(todo);
     });
@@ -51,6 +52,11 @@ export const dummyActions = {
         if (todo) {
             todo.checked = !todo.checked;
         }
+        });
+    },
+    deleteTodo: (id: number) => {
+        updateGlobalState((draft) => {
+        draft.todos = draft.todos.filter((todo) => todo.id !== id);
         });
     },
 };

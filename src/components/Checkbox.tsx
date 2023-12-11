@@ -4,7 +4,6 @@ interface CheckboxProps {
   label: string;
   checked: boolean;
   onClick: () => void;
-  onKeyUp: (e: React.KeyboardEvent) => void;
   onDelete: () => void;
 }
 
@@ -12,7 +11,6 @@ const Checkbox: React.FC<CheckboxProps> = ({
   label,
   checked,
   onClick,
-  onKeyUp,
   onDelete,
 }) => {
   return (
@@ -21,7 +19,6 @@ const Checkbox: React.FC<CheckboxProps> = ({
         type="checkbox"
         checked={checked}
         onChange={onClick}
-        onKeyUp={onKeyUp}
         className="mr-2 h-5 w-5 text-blue-500"
       />
       <span className={`flex-1 ${checked ? "line-through text-gray-500" : ""}`}>

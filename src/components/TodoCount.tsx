@@ -1,4 +1,4 @@
-import { useGlobalState } from "./rxduxStore";
+import { useGlobalState } from "../store/rxdxStore";
 
 const TodoCount = () => {
   const { todos } = useGlobalState("todos");
